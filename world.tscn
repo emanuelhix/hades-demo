@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dr74r5kaejc4x"]
+
+[ext_resource type="Script" path="res://Movement.gd" id="1_fyewr"]
+[ext_resource type="Texture2D" uid="uid://nwdgw6gwf4um" path="res://icon.svg" id="1_n3i7v"]
+[ext_resource type="Script" path="res://Caster.gd" id="3_tvcdp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xtuwk"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." node_paths=PackedStringArray("_sprite")]
+script = ExtResource("1_fyewr")
+_sprite = NodePath("Sprite2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_xtuwk")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture_filter = 1
+rotation = 1.5708
+texture = ExtResource("1_n3i7v")
+
+[node name="Caster" type="Node2D" parent="." node_paths=PackedStringArray("character")]
+script = ExtResource("3_tvcdp")
+character = NodePath("../CharacterBody2D")
