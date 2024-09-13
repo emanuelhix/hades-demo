@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqwaqpjx3dy67"]
+
+[ext_resource type="Script" path="res://base_bullet.gd" id="1_5qsg7"]
+[ext_resource type="Texture2D" uid="uid://b07ofgsw5pey4" path="res://fireball.png" id="2_c4x0w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0l8kw"]
+
+[node name="base" type="CharacterBody2D"]
+scale = Vector2(0.25, 0.25)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_5qsg7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_0l8kw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -1.5708
+texture = ExtResource("2_c4x0w")
