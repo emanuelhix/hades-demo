@@ -8,7 +8,6 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	velocity = direction * speed
-	rotation += delta * 100
 	var collided = move_and_collide(velocity)
 	if collided:
 		queue_free()
